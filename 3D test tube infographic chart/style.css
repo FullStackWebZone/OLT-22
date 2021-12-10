@@ -1,0 +1,178 @@
+*
+{
+	margin: 0;
+	padding: 0;	
+}
+body
+{
+	background: #ffc6d1;
+
+	--color-1: #f7be26;
+	--color-2: #ff8e34;
+	--color-3: #ff2c3b;
+	--color-4: #ed41ad;
+	--color-5: #37b8ff;
+	--color-6: #8fc123;
+
+	--data-1: 55%;
+	--data-2: 25%;
+	--data-3: 70%;
+	--data-4: 90%;
+	--data-5: 60%;
+	--data-6: 95%;
+}
+.container
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.bar-section
+{
+	display: flex;
+	width: 100%;
+}
+.bar-chart
+{
+	width: 70px;
+	height: 300px;
+	margin: 0 30px;
+}
+.bar-chart span
+{
+	display: block;
+	position: relative;
+}
+.bar-chart span:nth-child(1),
+.bar-chart span:nth-child(3)
+{
+	height: 5%;
+	background: linear-gradient(90deg, #000 0%, #fff 15%, #eee 20%, #000 40%, #000 90%, #fff 95%, #000 100%);
+}
+.bar-chart span:nth-child(2)
+{
+	height: 90%;
+}
+.bar-chart span:nth-child(2):after
+{
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: linear-gradient(90deg, rgb(0 0 0 / 14%) 0%, rgb(255 255 255 / 20%) 15%, rgb(238 238 238 / 53%) 20%, rgb(0 0 0 / 22%) 40%, rgb(0 0 0 / 15%) 90%, rgb(255 255 255 / 28%) 95%, rgb(0 0 0 / 19%)100%);
+}
+.bar-chart span:nth-child(2):before
+{
+	content: "";
+	width: 100%;
+	background: red;
+	position: absolute;
+	bottom: 0;
+	height: 90%;
+}
+.bar-chart:before
+{
+	display: inline-block;
+	width: 100%;
+	font-weight: bold;
+	font-family: arial;
+	color: #ffff;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 25px;
+}
+.bar-chart.tube-1:before
+{
+	content: "55%";
+}
+.bar-chart.tube-2:before
+{
+	content: "25%";
+}
+.bar-chart.tube-3:before
+{
+	content: "70%";
+}
+.bar-chart.tube-4:before
+{
+	content: "90%";
+}
+.bar-chart.tube-5:before
+{
+	content: "60%";
+}
+.bar-chart.tube-6:before
+{
+	content: "95%";
+} 
+
+
+.bar-chart.tube-1 span:nth-child(2):before
+{
+	background: var(--color-1);
+	height: var(--data-1);
+	animation: bar-1 5s;
+}
+.bar-chart.tube-2 span:nth-child(2):before
+{
+	background: var(--color-2);
+	height: var(--data-2);
+	animation: bar-2 5s;
+}
+.bar-chart.tube-3 span:nth-child(2):before
+{
+	background: var(--color-3);
+	height: var(--data-3);
+	animation: bar-3 5s;
+}
+.bar-chart.tube-4 span:nth-child(2):before
+{
+	background: var(--color-4);
+	height: var(--data-4);
+	animation: bar-4 5s;
+}
+.bar-chart.tube-5 span:nth-child(2):before
+{
+	background: var(--color-5);
+	height: var(--data-5);
+	animation: bar-5 5s;
+}
+.bar-chart.tube-6 span:nth-child(2):before
+{
+	background: var(--color-6);
+	height: var(--data-6);
+	animation: bar-6 5s;
+} 
+
+@keyframes bar-1
+{
+	0%{height: 0%;}
+	100%{height: var(--data-1);}
+}
+@keyframes bar-2
+{
+	0%{height: 0%;}
+	100%{height: var(--data-2);}
+}
+@keyframes bar-3
+{
+	0%{height: 0%;}
+	100%{height: var(--data-3);}
+}
+@keyframes bar-4
+{
+	0%{height: 0%;}
+	100%{height: var(--data-4);}
+}
+@keyframes bar-5
+{
+	0%{height: 0%;}
+	100%{height: var(--data-5);}
+}
+@keyframes bar-6
+{
+	0%{height: 0%;}
+	100%{height: var(--data-6);}
+}
